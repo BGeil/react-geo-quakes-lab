@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-// import MapContainer from './MapContainer'
+import {GoogleApiWrapper} from 'google-maps-react';
+import MapContainer from './MapContainer'
 import QuakeContainer from './QuakeContainer'
+require('dotenv').config()
+
 
 class App extends Component {
     constructor(){
         super();
         this.state = {
-          earthquakes: []
+          earthquakes: [] 
         }
       }
       getEarthquake = async () => {
@@ -22,14 +25,11 @@ class App extends Component {
           console.error(err)
         }
       }
-      componentDidMount(){
-        this.getEarthquake()
-      }
       render() {
         return (
           <div className="app">
             <div className="mapContainer">
-             
+             <MapContainer earthquakes={this.state.earthquakes}/>
             </div>
             <div className="quakeContainer">
               <h1>Earthquakes from the past week: </h1>

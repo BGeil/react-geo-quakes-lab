@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 
 function QuakeContainer(props){
     const quakeContainer = props.earthquakes.map((earthquake, i) => {
