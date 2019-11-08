@@ -6,7 +6,7 @@ class App extends Component {
     constructor(){
         super();
         this.state = {
-          properties: []
+          earthquakes: []
         }
       }
       getEarthquake = async () => {
@@ -15,7 +15,7 @@ class App extends Component {
           const parsedLocations = await locations.json();
           console.log(parsedLocations)
           this.setState({
-            properties: parsedLocations.features
+            earthquakes: parsedLocations.features
           })
         }
         catch(err) {
@@ -33,7 +33,7 @@ class App extends Component {
             </div>
             <div className="quakeContainer">
               <h1>Earthquakes from the past week: </h1>
-               <QuakeContainer properties={this.state.properties}/>
+               <QuakeContainer earthquakes={this.state.earthquakes}/>
             </div>
           </div>
         );
