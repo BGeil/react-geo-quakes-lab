@@ -13,7 +13,7 @@ class App extends Component {
         try {
           const locations = await fetch(`http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson`)
           const parsedLocations = await locations.json();
-          console.log(parsedLocations)
+          console.log(parsedLocations.features)
           this.setState({
             earthquakes: parsedLocations.features
           })

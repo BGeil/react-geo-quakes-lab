@@ -1,18 +1,18 @@
 import React  from 'react'
 
 function QuakeContainer(props){
-    const quakeContainer = props.earthquakes.map((earthquakes, i) => {
+    const quakeContainer = props.earthquakes.map((earthquake, i) => {
         return(
-            <li key={i}>
-                {earthquakes.id}
-            </li>
+            <ul key={i}>
+                {earthquake.properties.title}
+            </ul>
         )
     })
     return(
         <React.Fragment>
-            <ul>
+            <div id="info">
                 {quakeContainer}
-            </ul>
+            </div>
         </React.Fragment>)
 }
 export default QuakeContainer;
